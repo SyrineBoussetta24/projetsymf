@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+{% block title%} Liste des Romans{% endblock %}
+{% block body %}
+{% if romans %}
+
+
+<section class="main-banner" id="top">
+  <div class="container">
+    <a href="/roman/new/" class="btn btn-success">
+      <span class="glyphicon glyphicon-plus-sign"></span>Add new novel
+    </a>
+<table id="romans" class="table table-striped">
+<thead>
+<tr>
+<th>Name</th>
+<th>Price</th>
+<th>Operations</th>
+
+</tr>
+</thead>
+<tbody>
+{% for roman in romans %}
+<tr>
+<td>{{ roman.nom }}</td>
+<td>{{ roman.prix }}</td>
+<td>
+    <a href="/roman/{{ roman.id }}" class="btn btn-dark"><h5>Actions</h5></a>
+    <a href="/roman/edit/{{ roman.id }}" class="btn btn-warning">
+        <p><span class="glyphicon glyphicon-pencil"></span></p>
+
+    </a>
+    <a href="/roman/delete/{{ roman.id }}" class="btn btn-danger"
+onclick="return confirm('Etes-vous sûr de supprimer cet roman?');">
+<p> <span class="glyphicon glyphicon-trash"></span></p></a>
+</td>
+    
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+
+
+
+
+
+
+    <ul class="pagination">
+        <ul class="pagination justify-content-end">
+          <li class="page-item">
+            <a class="page-link" href="livre">Previous</a>
+          </li>
+        <li class="page-item"><a class="page-link" href="/livre/">1</a></li>
+        <li class="page-item active"><a class="page-link" href="/roman/">2
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+      </ul>
+
+
+<div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">horror</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-danger" role="progressbar" style="width: 55%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">romantic</div>
+  </div>
+    <div class="progress">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">dramatic</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-warning" role="progressbar" style="width: 15%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">comedy</div>
+  </div>
+  
+
+
+
+  </div>
+</section>
+
+{% else %}
+<p>Aucun romans</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+{% block title%} Liste des Livres{% endblock %}
+{% block body %}
+{% if livres %}
+<section class="main-banner" id="top">
+  <div class="container">
+<p>
+    
+    <a href="/livre/" class="btn btn-outline-dark" style="width:11.3% ;float:left"   >
+        <span class="glyphicon glyphicon-book"></span> Book
+      </a>
+   
+      
+
+    <a href="/livre/new/" class="btn btn-success">
+      <span class="glyphicon glyphicon-plus-sign"></span>Add new book
+    </a>
+
+    <a href="/roman/" class="btn btn-info " style="width:10.3% ;float: right"   >
+        <span class="glyphicon glyphicon-book"></span> roman
+      </a>
+  </p> 
+
+
+<table id="livres" class="table table-striped">
+<thead>
+<tr>
+<th>Name</th>
+<th>Price</th>
+<th>Operations</th>
+
+</tr>
+</thead>
+<tbody>
+{% for livre in livres %}
+<tr>
+<td>{{ livre.nom }}</td>
+<td>{{ livre.prix }}</td>
+<td>
+    <a href="/livre/{{ livre.id }}" class="btn btn-primary style="background-color: #e3f2fd;"><h5>Actions</h5></a>
+    <a href="/livre/edit/{{ livre.id }}" class="btn btn-warning">
+        <p><span class="glyphicon glyphicon-pencil"></span></p>
+    </a>
+    <a href="/livre/delete/{{ livre.id }}" class="btn btn-danger"
+onclick="return confirm('Etes-vous sûr de supprimer cet livre?');">
+<p> <span class="glyphicon glyphicon-trash"></span></p> </a>
+
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+
+
+
+
+
+
+    <ul class="pagination">
+        <ul class="pagination justify-content-end">
+          <li class="page-item">
+            <a class="page-link" href="livre">Previous</a>
+          </li>
+        <li class="page-item active"><a class="page-link" href="/livre/">1
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        <li class="page-item"><a class="page-link" href="/roman/">2</a></li>
+        
+       
+        <li class="page-item">
+          <a class="page-link" href="/roman/">Next</a>
+        </li>
+    </ul>
+      </ul>
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+
+               
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="30%" aria-valuemin="0" aria-valuemax="30">25%horror</div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">50% Dramatic</div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 10%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">10% serial killer</div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar bg-info" role="progressbar" style="width: 15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">15%romantic</div>
+      </div>
+
+
+
+
+
+
+    </div>
+  </section>
+     
+{% else %}
+<p>Aucun livres</p>
+{% endif %}
+{% endblock %}

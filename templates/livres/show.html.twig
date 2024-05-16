@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ livre.nom }}{% endblock %}
+{% block stylesheets %}
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .titre {
+            color: #333;
+        }
+
+        .prix {
+            color: #666;
+        }
+
+        .lien-retour {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .lien-retour:hover {
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1 class="titre">{{ livre.nom }}</h1>
+    <p class="prix">{{ livre.prix }}</p>
+    <hr>
+    <a href="/" class="lien-retour">Retour</a>
+</div>
+{% endblock %}

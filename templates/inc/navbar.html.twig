@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    /* Styles pour le header */
+    .header-area {
+      background-color: #333;
+      padding: 20px 0;
+    }
+
+    .header-area .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-area .logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    .header-area .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-area .main-nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .header-area .main-nav ul li:last-child {
+      margin-right: 0;
+    }
+
+    .header-area .main-nav ul li a {
+      color: #000; /* Couleur noire */
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .header-area .main-nav ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Styles pour le bouton de menu */
+    .menu-trigger {
+      display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .header-area .container {
+        flex-direction: column;
+      }
+
+      .menu-trigger {
+        display: block;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .header-area .main-nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+      }
+
+      .header-area .main-nav ul.open {
+        display: block;
+      }
+
+      .header-area .main-nav ul li {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header-area header-sticky">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                  <!-- ***** Logo Start ***** -->
+                  <a href="index.html" class="logo">
+                      <h1 style="color: #000;">Shop</h1> <!-- Couleur noire -->
+                  </a>
+                  <!-- ***** Logo End ***** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                      <li class="scroll-to-section"><a href="#" class="active" style="color: #000;">Home</a></li> <!-- Couleur noire -->
+                      <li><a href="/clientLivre" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> <span class="glyphicon glyphicon-shopping-cart" style="float:right"></span> Shopping Cart</a></li>
+                      <li><a href="/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Connexion</a></li>
+                  </ul>        
+                  <a class='menu-trigger'>
+                      <span style="color: #000;">Menu</span> <!-- Couleur noire -->
+                  </a>
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
+      </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Votre contenu ici -->
+</div>
+
+</body>
+</html>

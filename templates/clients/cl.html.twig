@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block title%} Liste des Livres{% endblock %}
+{% block body %}
+{% if livres %}
+<section class="main-banner" id="top">
+  <div class="container">
+<h2>liste des livres:</h2>
+
+<table id="livres" class="table table-striped">
+<thead>
+<tr>
+<th>Name</th>
+<th>Price</th>
+
+
+</tr>
+</thead>
+<tbody>
+  
+{% for livre in livres %}
+<tr>
+<td>{{ livre.nom }}</td>
+<td>{{ livre.prix }}</td>
+
+</tr>
+{% endfor %}
+</div></section>
+</tbody>
+</table>
+
+<ul class="pagination">
+  <ul class="pagination justify-content-end">
+    <li class="page-item">
+      <a class="page-link" href="clientLivre">Previous</a>
+    </li>
+  <li class="page-item active"><a class="page-link" href="/clienLivre/">1
+        <span class="sr-only">(current)</span>
+      </a>
+    </li>
+  <li class="page-item"><a class="page-link" href="/clientRoman/">2</a></li>
+  
+ 
+  <li class="page-item">
+    <a class="page-link" href="/clientRoman/">Next</a>
+  </li>
+</ul>
+</ul>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+
+
+
+
+     
+{% else %}
+<p>Aucun livres</p>
+{% endif %}
+{% endblock %}
